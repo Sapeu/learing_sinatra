@@ -1,0 +1,142 @@
+* Available Template Languages
+
+Some languages have multiple implementations. To specify what implementation to use (and to be thread-safe), you should simply require it first:
+
+#+BEGIN_SRC ruby
+  require 'sinatra'
+  require 'rdiscount' # or require 'bluecloth'
+  get('/') { markdown :index }
+#+END_SRC
+
+** Haml Templates
+
+| ependency	    | haml                           |
+| File Extension | .haml                          |
+| Example	      | haml :index, :format => :html5 |
+
+** Erb Templates
+
+| Dependency      | 	erubis or erb (included in Ruby)      |
+| File Extensions | 	.erb, .rhtml or .erubis (Erubis only) |
+| Example         | 	erb :index                            |
+
+** Builder Templates
+
+| Dependency     | 	builder                         |
+| File Extension | 	.builder                        |
+| Example        | 	builder { | xml | xml.em "hi" } |
+
+** Nokogiri Templates
+
+| Dependency     | 	nokogiri                         |
+| File Extension | 	.nokogiri                        |
+| Example        | 	nokogiri { | xml | xml.em "hi" } |
+
+** Sass Templates
+
+| Dependency     | 	sass                                  |
+| File Extension | 	.sass                                 |
+| Example        | 	sass :stylesheet, :style => :expanded |
+
+** SCSS Templates
+
+| Dependency     | 	sass                                  |
+| File Extension | 	.scss                                 |
+| Example        | 	scss :stylesheet, :style => :expanded |
+
+** Less Templates
+
+| Dependency     | 	less             |
+| File Extension | 	.less            |
+| Example        | 	less :stylesheet |
+
+** Liquid Templates
+
+| Dependency     | 	liquid                                        |
+| File Extension | 	.liquid                                       |
+| Example        | 	liquid :index, :locals => { :key => 'value' } |
+
+** Markdown Templates
+
+| Dependency      | 	Anyone of: RDiscount, RedCarpet, BlueCloth, kramdown, maruku |
+| File Extensions | 	.markdown, .mkd and .md                                      |
+| Example         | 	markdown :index, :layout_engine => :erb                      |
+
+** Textile Templates
+
+| Dependency     | 	RedCloth                             |
+| File Extension | 	.textile                             |
+| Example	      | textile :index, :layout_engine => :erb |
+
+** RDoc Templates
+
+| Dependency     | 	RDoc                                 |
+| File Extension | 	.rdoc                                |
+| Example        | 	rdoc :README, :layout_engine => :erb |
+
+** AsciiDoc Templates
+
+| Dependency     | 	Asciidoctor                              |
+| File Extension | 	.asciidoc, .adoc and .ad                 |
+| Example        | 	asciidoc :README, :layout_engine => :erb |
+
+** Radius Templates
+
+| Dependency     | 	Radius                                        |
+| File Extension | 	.radius                                       |
+| Example        | 	radius :index, :locals => { :key => 'value' } |
+
+** Markaby Templates
+
+| Dependency | 	Markaby                   |
+| File       | Extension	.mab             |
+| Example    | 	markaby { h1 "Welcome!" } |
+
+** RABL Templates
+
+| Dependency	     | Rabl        |
+| File Extension	 | .rabl       |
+| Example	        | rabl :index |
+
+** Slim Templates
+
+| Dependency     | 	Slim Lang   |
+| File Extension | 	.slim       |
+| Example        | 	slim :index |
+
+** Creole Templates
+
+| Dependency     | 	Creole                               |
+| File Extension | 	.creole                              |
+| Example        | 	creole :wiki, :layout_engine => :erb |
+
+** MediaWiki Templates
+
+| Dependency	     | WikiCloth                               |
+| File Extension	 | .mediawiki and .mw                      |
+| Example	        | mediawiki :wiki, :layout_engine => :erb |
+
+** CoffeeScript Templates
+
+| Dependency     | 	CoffeeScript and a way to execute javascript |
+| File Extension | 	.coffee                                      |
+| Example        | 	coffee :index                                |
+
+
+** Stylus Templates
+
+| Dependency     | 	Stylus and a way to execute javascript |
+| File Extension | 	.styl                                  |
+| Example        | 	stylus :index                          |
+
+** Yajl Templates
+
+| Dependency     | 	yajl-ruby                                                                                  |
+| File Extension | 	.yajl                                                                                      |
+| Example        | 	yajl :index, :locals => { :key => 'qux' }, :callback => 'present', :variable => 'resource' |
+
+** WLang Templates
+
+| Dependency     | 	WLang                                        |
+| File Extension | 	.wlang                                       |
+| Example        | 	wlang :index, :locals => { :key => 'value' } |
