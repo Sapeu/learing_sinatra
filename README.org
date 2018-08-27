@@ -1,0 +1,3 @@
+* 练习sinatra
+
+该仓库只是看着[[sinatra文档][http://sinatrarb.com/]]的部分练习而已
