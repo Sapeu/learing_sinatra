@@ -1,0 +1,17 @@
+* Modular vs. Classic Style
+
+Contrary to common belief, there is nothing wrong with the classic style. If it suits your application, you do not have to switch to a modular application.
+
+The main disadvantage of using the classic style rather than the modular style is that you will only have one Sinatra application per Ruby process. If you plan to use more than one, switch to the modular style. There is no reason you cannot mix the modular and the classic styles.
+
+If switching from one style to the other, you should be aware of slightly different default settings:
+
+
+| Setting	        | Classic                | 	Modular                        | 	Modular                               |
+|------------------+------------------------+----------------------------------+-----------------------------------------|
+| app_file         | 	file loading sinatra | 	file subclassing Sinatra::Base | 	file subclassing Sinatra::Application |
+| run              | 	$0 == app_file       | 	false                          | 	false                                 |
+| logging          | 	true                 | 	false                          | 	true                                  |
+| method_override  | 	true                 | 	false	                        | true                                    |
+| inline_templates | 	true                 | 	false                          | 	true                                  |
+| static           | 	true                 | 	File.exist?(public_folder)     | 	true                                  |
